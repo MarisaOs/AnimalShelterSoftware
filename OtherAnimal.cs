@@ -9,4 +9,11 @@ namespace AnimalShelterSoftware
     internal class OtherAnimal
     {
     }
+    public class OtherSubclass : Animal
+    {
+        public OtherSubclass()
+        {
+
+        }
+    }
 }
