@@ -43,6 +43,12 @@
             this.EditButton = new System.Windows.Forms.Button();
             this.ShowHideButton = new System.Windows.Forms.Button();
             this.NameTextBox = new System.Windows.Forms.TextBox();
+            this.BreedTextBox = new System.Windows.Forms.TextBox();
+            this.AgeTextBox = new System.Windows.Forms.TextBox();
+            this.AppearanceTextBox = new System.Windows.Forms.TextBox();
+            this.EnterDateTextBox = new System.Windows.Forms.TextBox();
+            this.AdoptionDateTextBox = new System.Windows.Forms.TextBox();
+            this.ExtraInformationTextBox = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.AnimalImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,7 +71,7 @@
             this.CurrentAnimalsList.ItemHeight = 20;
             this.CurrentAnimalsList.Location = new System.Drawing.Point(26, 124);
             this.CurrentAnimalsList.Name = "CurrentAnimalsList";
-            this.CurrentAnimalsList.Size = new System.Drawing.Size(233, 542);
+            this.CurrentAnimalsList.Size = new System.Drawing.Size(233, 462);
             this.CurrentAnimalsList.TabIndex = 1;
             // 
             // AnimalImage
@@ -131,7 +137,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(280, 409);
+            this.label6.Location = new System.Drawing.Point(280, 405);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(184, 28);
             this.label6.TabIndex = 8;
@@ -151,7 +157,7 @@
             // 
             this.DeleteButton.Location = new System.Drawing.Point(285, 136);
             this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(61, 52);
+            this.DeleteButton.Size = new System.Drawing.Size(50, 50);
             this.DeleteButton.TabIndex = 10;
             this.DeleteButton.UseVisualStyleBackColor = true;
             // 
@@ -159,7 +165,7 @@
             // 
             this.EditButton.Location = new System.Drawing.Point(361, 136);
             this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(55, 52);
+            this.EditButton.Size = new System.Drawing.Size(50, 50);
             this.EditButton.TabIndex = 11;
             this.EditButton.UseVisualStyleBackColor = true;
             // 
@@ -167,23 +173,78 @@
             // 
             this.ShowHideButton.Location = new System.Drawing.Point(431, 136);
             this.ShowHideButton.Name = "ShowHideButton";
-            this.ShowHideButton.Size = new System.Drawing.Size(60, 52);
+            this.ShowHideButton.Size = new System.Drawing.Size(50, 50);
             this.ShowHideButton.TabIndex = 12;
             this.ShowHideButton.UseVisualStyleBackColor = true;
             // 
             // NameTextBox
             // 
-            this.NameTextBox.Location = new System.Drawing.Point(361, 210);
+            this.NameTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameTextBox.Location = new System.Drawing.Point(551, 210);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(140, 26);
             this.NameTextBox.TabIndex = 13;
+            // 
+            // BreedTextBox
+            // 
+            this.BreedTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BreedTextBox.Location = new System.Drawing.Point(551, 248);
+            this.BreedTextBox.Name = "BreedTextBox";
+            this.BreedTextBox.Size = new System.Drawing.Size(140, 26);
+            this.BreedTextBox.TabIndex = 14;
+            // 
+            // AgeTextBox
+            // 
+            this.AgeTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AgeTextBox.Location = new System.Drawing.Point(551, 285);
+            this.AgeTextBox.Name = "AgeTextBox";
+            this.AgeTextBox.Size = new System.Drawing.Size(140, 26);
+            this.AgeTextBox.TabIndex = 15;
+            // 
+            // AppearanceTextBox
+            // 
+            this.AppearanceTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AppearanceTextBox.Location = new System.Drawing.Point(551, 325);
+            this.AppearanceTextBox.Name = "AppearanceTextBox";
+            this.AppearanceTextBox.Size = new System.Drawing.Size(140, 26);
+            this.AppearanceTextBox.TabIndex = 16;
+            // 
+            // EnterDateTextBox
+            // 
+            this.EnterDateTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EnterDateTextBox.Location = new System.Drawing.Point(550, 366);
+            this.EnterDateTextBox.Name = "EnterDateTextBox";
+            this.EnterDateTextBox.Size = new System.Drawing.Size(140, 26);
+            this.EnterDateTextBox.TabIndex = 17;
+            // 
+            // AdoptionDateTextBox
+            // 
+            this.AdoptionDateTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdoptionDateTextBox.Location = new System.Drawing.Point(550, 407);
+            this.AdoptionDateTextBox.Name = "AdoptionDateTextBox";
+            this.AdoptionDateTextBox.Size = new System.Drawing.Size(140, 26);
+            this.AdoptionDateTextBox.TabIndex = 18;
+            // 
+            // ExtraInformationTextBox
+            // 
+            this.ExtraInformationTextBox.Location = new System.Drawing.Point(285, 490);
+            this.ExtraInformationTextBox.Name = "ExtraInformationTextBox";
+            this.ExtraInformationTextBox.Size = new System.Drawing.Size(729, 96);
+            this.ExtraInformationTextBox.TabIndex = 20;
+            this.ExtraInformationTextBox.Text = "";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1026, 705);
+            this.ClientSize = new System.Drawing.Size(1026, 600);
+            this.Controls.Add(this.ExtraInformationTextBox);
+            this.Controls.Add(this.AdoptionDateTextBox);
+            this.Controls.Add(this.EnterDateTextBox);
+            this.Controls.Add(this.AppearanceTextBox);
+            this.Controls.Add(this.AgeTextBox);
+            this.Controls.Add(this.BreedTextBox);
             this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.ShowHideButton);
             this.Controls.Add(this.EditButton);
@@ -224,6 +285,12 @@
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.Button ShowHideButton;
         private System.Windows.Forms.TextBox NameTextBox;
+        private System.Windows.Forms.TextBox BreedTextBox;
+        private System.Windows.Forms.TextBox AgeTextBox;
+        private System.Windows.Forms.TextBox AppearanceTextBox;
+        private System.Windows.Forms.TextBox EnterDateTextBox;
+        private System.Windows.Forms.TextBox AdoptionDateTextBox;
+        private System.Windows.Forms.RichTextBox ExtraInformationTextBox;
     }
 }
 
