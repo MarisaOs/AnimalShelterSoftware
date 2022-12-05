@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.PageTitle = new System.Windows.Forms.Label();
             this.CurrentAnimalsList = new System.Windows.Forms.ListBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.AnimalImage = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,7 +42,8 @@
             this.DeleteButton = new System.Windows.Forms.Button();
             this.EditButton = new System.Windows.Forms.Button();
             this.ShowHideButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.NameTextBox = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.AnimalImage)).BeginInit();
             this.SuspendLayout();
             // 
             // PageTitle
@@ -67,13 +68,13 @@
             this.CurrentAnimalsList.Size = new System.Drawing.Size(233, 542);
             this.CurrentAnimalsList.TabIndex = 1;
             // 
-            // pictureBox1
+            // AnimalImage
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(671, 124);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(256, 263);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.AnimalImage.Location = new System.Drawing.Point(758, 124);
+            this.AnimalImage.Name = "AnimalImage";
+            this.AnimalImage.Size = new System.Drawing.Size(256, 263);
+            this.AnimalImage.TabIndex = 2;
+            this.AnimalImage.TabStop = false;
             // 
             // label1
             // 
@@ -170,12 +171,20 @@
             this.ShowHideButton.TabIndex = 12;
             this.ShowHideButton.UseVisualStyleBackColor = true;
             // 
+            // NameTextBox
+            // 
+            this.NameTextBox.Location = new System.Drawing.Point(361, 210);
+            this.NameTextBox.Name = "NameTextBox";
+            this.NameTextBox.Size = new System.Drawing.Size(140, 26);
+            this.NameTextBox.TabIndex = 13;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1026, 705);
+            this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.ShowHideButton);
             this.Controls.Add(this.EditButton);
             this.Controls.Add(this.DeleteButton);
@@ -186,14 +195,14 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.AnimalImage);
             this.Controls.Add(this.CurrentAnimalsList);
             this.Controls.Add(this.PageTitle);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Paws&Claws Animal Shelter";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AnimalImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,7 +212,7 @@
 
         private System.Windows.Forms.Label PageTitle;
         private System.Windows.Forms.ListBox CurrentAnimalsList;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox AnimalImage;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -214,6 +223,7 @@
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.Button ShowHideButton;
+        private System.Windows.Forms.TextBox NameTextBox;
     }
 }
 
