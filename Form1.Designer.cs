@@ -54,6 +54,8 @@
             this.RodentButton = new System.Windows.Forms.Button();
             this.ReptileButton = new System.Windows.Forms.Button();
             this.OtherButton = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.GenderTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.AnimalImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +78,7 @@
             this.CurrentAnimalsList.ItemHeight = 20;
             this.CurrentAnimalsList.Location = new System.Drawing.Point(26, 204);
             this.CurrentAnimalsList.Name = "CurrentAnimalsList";
-            this.CurrentAnimalsList.Size = new System.Drawing.Size(233, 382);
+            this.CurrentAnimalsList.Size = new System.Drawing.Size(233, 422);
             this.CurrentAnimalsList.TabIndex = 1;
             this.CurrentAnimalsList.SelectedIndexChanged += new System.EventHandler(this.CurrentAnimalsList_SelectedIndexChanged);
             // 
@@ -84,9 +86,10 @@
             // 
             this.AnimalImage.Location = new System.Drawing.Point(758, 124);
             this.AnimalImage.Name = "AnimalImage";
-            this.AnimalImage.Size = new System.Drawing.Size(256, 263);
+            this.AnimalImage.Size = new System.Drawing.Size(256, 256);
             this.AnimalImage.TabIndex = 2;
             this.AnimalImage.TabStop = false;
+            this.AnimalImage.Click += new System.EventHandler(this.AnimalImage_Click);
             // 
             // label1
             // 
@@ -103,7 +106,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(280, 246);
+            this.label2.Location = new System.Drawing.Point(280, 277);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 28);
             this.label2.TabIndex = 4;
@@ -113,7 +116,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(280, 283);
+            this.label3.Location = new System.Drawing.Point(280, 314);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 28);
             this.label3.TabIndex = 5;
@@ -123,7 +126,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(280, 325);
+            this.label4.Location = new System.Drawing.Point(280, 356);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(162, 28);
             this.label4.TabIndex = 6;
@@ -133,7 +136,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(280, 365);
+            this.label5.Location = new System.Drawing.Point(280, 396);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(262, 28);
             this.label5.TabIndex = 7;
@@ -143,7 +146,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(280, 405);
+            this.label6.Location = new System.Drawing.Point(280, 436);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(184, 28);
             this.label6.TabIndex = 8;
@@ -153,7 +156,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(280, 448);
+            this.label7.Location = new System.Drawing.Point(280, 479);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(221, 28);
             this.label7.TabIndex = 9;
@@ -161,30 +164,37 @@
             // 
             // AddButton
             // 
+            this.AddButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.AddButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.AddButton.Image = ((System.Drawing.Image)(resources.GetObject("AddButton.Image")));
-            this.AddButton.Location = new System.Drawing.Point(489, 122);
+            this.AddButton.Location = new System.Drawing.Point(473, 111);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(60, 60);
+            this.AddButton.Size = new System.Drawing.Size(76, 71);
             this.AddButton.TabIndex = 10;
-            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.UseVisualStyleBackColor = false;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // SaveButton
             // 
+            this.SaveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.SaveButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveButton.Image")));
-            this.SaveButton.Location = new System.Drawing.Point(566, 123);
+            this.SaveButton.Location = new System.Drawing.Point(555, 111);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(60, 60);
+            this.SaveButton.Size = new System.Drawing.Size(71, 72);
             this.SaveButton.TabIndex = 11;
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // DeleteButton
             // 
+            this.DeleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.DeleteButton.Image = ((System.Drawing.Image)(resources.GetObject("DeleteButton.Image")));
-            this.DeleteButton.Location = new System.Drawing.Point(641, 124);
+            this.DeleteButton.Location = new System.Drawing.Point(632, 111);
             this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(60, 62);
+            this.DeleteButton.Size = new System.Drawing.Size(72, 75);
             this.DeleteButton.TabIndex = 12;
             this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // NameTextBox
             // 
@@ -197,7 +207,7 @@
             // BreedTextBox
             // 
             this.BreedTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BreedTextBox.Location = new System.Drawing.Point(551, 248);
+            this.BreedTextBox.Location = new System.Drawing.Point(551, 279);
             this.BreedTextBox.Name = "BreedTextBox";
             this.BreedTextBox.Size = new System.Drawing.Size(140, 26);
             this.BreedTextBox.TabIndex = 14;
@@ -205,7 +215,7 @@
             // AgeTextBox
             // 
             this.AgeTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AgeTextBox.Location = new System.Drawing.Point(551, 285);
+            this.AgeTextBox.Location = new System.Drawing.Point(551, 316);
             this.AgeTextBox.Name = "AgeTextBox";
             this.AgeTextBox.Size = new System.Drawing.Size(140, 26);
             this.AgeTextBox.TabIndex = 15;
@@ -213,7 +223,7 @@
             // AppearanceTextBox
             // 
             this.AppearanceTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AppearanceTextBox.Location = new System.Drawing.Point(551, 325);
+            this.AppearanceTextBox.Location = new System.Drawing.Point(551, 356);
             this.AppearanceTextBox.Name = "AppearanceTextBox";
             this.AppearanceTextBox.Size = new System.Drawing.Size(140, 26);
             this.AppearanceTextBox.TabIndex = 16;
@@ -221,7 +231,7 @@
             // EnterDateTextBox
             // 
             this.EnterDateTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EnterDateTextBox.Location = new System.Drawing.Point(550, 366);
+            this.EnterDateTextBox.Location = new System.Drawing.Point(550, 397);
             this.EnterDateTextBox.Name = "EnterDateTextBox";
             this.EnterDateTextBox.Size = new System.Drawing.Size(140, 26);
             this.EnterDateTextBox.TabIndex = 17;
@@ -229,16 +239,16 @@
             // AdoptionDateTextBox
             // 
             this.AdoptionDateTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdoptionDateTextBox.Location = new System.Drawing.Point(550, 407);
+            this.AdoptionDateTextBox.Location = new System.Drawing.Point(550, 438);
             this.AdoptionDateTextBox.Name = "AdoptionDateTextBox";
             this.AdoptionDateTextBox.Size = new System.Drawing.Size(140, 26);
             this.AdoptionDateTextBox.TabIndex = 18;
             // 
             // ExtraInformationTextBox
             // 
-            this.ExtraInformationTextBox.Location = new System.Drawing.Point(285, 490);
+            this.ExtraInformationTextBox.Location = new System.Drawing.Point(275, 519);
             this.ExtraInformationTextBox.Name = "ExtraInformationTextBox";
-            this.ExtraInformationTextBox.Size = new System.Drawing.Size(729, 96);
+            this.ExtraInformationTextBox.Size = new System.Drawing.Size(505, 96);
             this.ExtraInformationTextBox.TabIndex = 20;
             this.ExtraInformationTextBox.Text = "";
             // 
@@ -260,6 +270,7 @@
             this.CatButton.TabIndex = 22;
             this.CatButton.Text = "Cat";
             this.CatButton.UseVisualStyleBackColor = true;
+            this.CatButton.Click += new System.EventHandler(this.CatButton_Click);
             // 
             // RodentButton
             // 
@@ -269,6 +280,7 @@
             this.RodentButton.TabIndex = 23;
             this.RodentButton.Text = "Rodent";
             this.RodentButton.UseVisualStyleBackColor = true;
+            this.RodentButton.Click += new System.EventHandler(this.RodentButton_Click);
             // 
             // ReptileButton
             // 
@@ -278,6 +290,7 @@
             this.ReptileButton.TabIndex = 24;
             this.ReptileButton.Text = "Reptile";
             this.ReptileButton.UseVisualStyleBackColor = true;
+            this.ReptileButton.Click += new System.EventHandler(this.ReptileButton_Click);
             // 
             // OtherButton
             // 
@@ -287,13 +300,34 @@
             this.OtherButton.TabIndex = 25;
             this.OtherButton.Text = "Other";
             this.OtherButton.UseVisualStyleBackColor = true;
+            this.OtherButton.Click += new System.EventHandler(this.OtherButton_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(279, 240);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(107, 28);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Gender:";
+            // 
+            // GenderTextBox
+            // 
+            this.GenderTextBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GenderTextBox.Location = new System.Drawing.Point(551, 243);
+            this.GenderTextBox.Name = "GenderTextBox";
+            this.GenderTextBox.Size = new System.Drawing.Size(140, 26);
+            this.GenderTextBox.TabIndex = 27;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1026, 600);
+            this.ClientSize = new System.Drawing.Size(1026, 652);
+            this.Controls.Add(this.GenderTextBox);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.OtherButton);
             this.Controls.Add(this.ReptileButton);
             this.Controls.Add(this.RodentButton);
@@ -356,6 +390,8 @@
         private System.Windows.Forms.Button RodentButton;
         private System.Windows.Forms.Button ReptileButton;
         private System.Windows.Forms.Button OtherButton;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox GenderTextBox;
     }
 }
 

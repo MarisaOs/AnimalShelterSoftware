@@ -10,7 +10,7 @@ namespace AnimalShelterSoftware
     public class Animal
     {
         //Private information
-        private string PreviousOwnerInfo;
+        private string PreviousOwnerInfo = "Redacted";
     
         public Animal()
         {
@@ -18,9 +18,7 @@ namespace AnimalShelterSoftware
 
         }
 
-        //Encapsulation of private variables to the field.
-
-
+       
 
         //List to send to file
         private List<string> _AnimalFileList;
@@ -138,6 +136,24 @@ namespace AnimalShelterSoftware
         }
         #endregion
 
+        #region Gender
+        private string _Gender;
+        public string Gender
+        {
+            get
+            {
+                return _Gender;
+            }
+            set
+            {
+                _Gender = value;
+                //Log that the Gender changed         
+                AnimalFileList.Add(value);
+
+            }
+        }
+        #endregion
+
         #region ExtraInfo
         private string _ExtraInformation;
         public string ExtraInformation
@@ -148,6 +164,11 @@ namespace AnimalShelterSoftware
             }
             set
             {
+                //Data hiding
+                if (PreviousOwnerInfo != "Redacted")
+                {
+                    value = value + PreviousOwnerInfo;
+                }
                 _ExtraInformation = value;
                 //Log that the ExtraInformation changed         
                 AnimalFileList.Add(value);
@@ -158,9 +179,20 @@ namespace AnimalShelterSoftware
 
         //Method
         //Fill List with information from the file.
-        public void SaveAnimalToFile(string AnimalFilePath)
+        public void SaveAnimalToFile(string AnimalFilePath, string[] NewAnimalInfo)
         {
-            string AnimalInfoFormated = Name + " " + Breed + " " + Age + " " + Appearance + " " + EnteredShelterDate + " " + AdoptionDate + " ~" + ExtraInformation;
+            //Using the encapsulation of the private varaibles to organize the fields to store in the file.
+            _Name = NewAnimalInfo[0];
+            _Breed = NewAnimalInfo[1];
+            _Age = NewAnimalInfo[2];
+            _Appearance = NewAnimalInfo[3];
+            _EnteredShelterDate = NewAnimalInfo[4];
+            _AdoptionDate = NewAnimalInfo[5];
+            _Gender = NewAnimalInfo[6];
+            _ExtraInformation = NewAnimalInfo[7];
+
+
+            string AnimalInfoFormated = Name + " " + Breed + " " + Age + " " + Appearance + " " + EnteredShelterDate + " " + AdoptionDate + " " + Gender + " ~" + ExtraInformation;
             File.AppendAllText(AnimalFilePath,AnimalInfoFormated);
         }
 

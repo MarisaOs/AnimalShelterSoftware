@@ -89,5 +89,13 @@
   <ItemGroup>
     <None Include="Resources\DeleteIcon.png" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="AnimalImages\C#DogArt.jpg" />
+    <Content Include="AnimalImages\catart.jpg" />
+    <Content Include="AnimalImages\Hamster.jpg" />
+    <Content Include="AnimalImages\Others.jpg" />
+    <Content Include="AnimalImages\Reptiles.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
