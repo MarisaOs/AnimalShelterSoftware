@@ -9,13 +9,16 @@ namespace AnimalShelterSoftware
 {
     public class Animal
     {
-
+        //Private information
+        private string PreviousOwnerInfo;
     
         public Animal()
         {
             
 
         }
+
+        //Encapsulation of private variables to the field.
 
 
 
@@ -157,7 +160,7 @@ namespace AnimalShelterSoftware
         //Fill List with information from the file.
         public void SaveAnimalToFile(string AnimalFilePath)
         {
-            string AnimalInfoFormated = Name + " " + Breed + " " + Age + " " + Appearance + " " + EnteredShelterDate + " " + AdoptionDate + " " + ExtraInformation;
+            string AnimalInfoFormated = Name + " " + Breed + " " + Age + " " + Appearance + " " + EnteredShelterDate + " " + AdoptionDate + " ~" + ExtraInformation;
             File.AppendAllText(AnimalFilePath,AnimalInfoFormated);
         }
 

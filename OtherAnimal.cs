@@ -6,14 +6,8 @@ using System.Threading.Tasks;
 
 namespace AnimalShelterSoftware
 {
-    internal class OtherAnimal
+    internal class OtherAnimal : Animal
     {
     }
-    public class OtherSubclass : Animal
-    {
-        public OtherSubclass()
-        {
-
-        }
-    }
+    
 }

@@ -6,15 +6,47 @@ using System.Threading.Tasks;
 
 namespace AnimalShelterSoftware
 {
-    internal class Cat
+    internal class Cat : Animal
     {
-    }
-
-    public class CatSubclass : Animal
-    {
-        public CatSubclass()
+        private Boolean _IsDeclawed;
+        public Boolean IsDeclawed
         {
+            get
+            {
+                return _IsDeclawed;
+            }
+            set
+            {
+                _IsDeclawed = value;
+                //Log that the IsDeclawed changed         
+                AnimalFileList.Add(value.ToString());
 
+                
+
+            }
         }
+
+        private Boolean _IsHouseTrained;
+        public Boolean IsHouseTrained
+        {
+            get
+            {
+                return _IsHouseTrained;
+            }
+            set
+            {
+                _IsHouseTrained = value;
+                //Log that the IsHouseTrained changed         
+                AnimalFileList.Add(value.ToString());
+
+
+
+            }
+        }
+
+
+
     }
+
+
 }

@@ -39,9 +39,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.AddButton = new System.Windows.Forms.Button();
+            this.SaveButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
-            this.EditButton = new System.Windows.Forms.Button();
-            this.ShowHideButton = new System.Windows.Forms.Button();
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.BreedTextBox = new System.Windows.Forms.TextBox();
             this.AgeTextBox = new System.Windows.Forms.TextBox();
@@ -49,6 +49,11 @@
             this.EnterDateTextBox = new System.Windows.Forms.TextBox();
             this.AdoptionDateTextBox = new System.Windows.Forms.TextBox();
             this.ExtraInformationTextBox = new System.Windows.Forms.RichTextBox();
+            this.DogButton = new System.Windows.Forms.Button();
+            this.CatButton = new System.Windows.Forms.Button();
+            this.RodentButton = new System.Windows.Forms.Button();
+            this.ReptileButton = new System.Windows.Forms.Button();
+            this.OtherButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.AnimalImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,10 +74,11 @@
             this.CurrentAnimalsList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.CurrentAnimalsList.FormattingEnabled = true;
             this.CurrentAnimalsList.ItemHeight = 20;
-            this.CurrentAnimalsList.Location = new System.Drawing.Point(26, 124);
+            this.CurrentAnimalsList.Location = new System.Drawing.Point(26, 204);
             this.CurrentAnimalsList.Name = "CurrentAnimalsList";
-            this.CurrentAnimalsList.Size = new System.Drawing.Size(233, 462);
+            this.CurrentAnimalsList.Size = new System.Drawing.Size(233, 382);
             this.CurrentAnimalsList.TabIndex = 1;
+            this.CurrentAnimalsList.SelectedIndexChanged += new System.EventHandler(this.CurrentAnimalsList_SelectedIndexChanged);
             // 
             // AnimalImage
             // 
@@ -153,29 +159,32 @@
             this.label7.TabIndex = 9;
             this.label7.Text = "Extra Information:";
             // 
+            // AddButton
+            // 
+            this.AddButton.Image = ((System.Drawing.Image)(resources.GetObject("AddButton.Image")));
+            this.AddButton.Location = new System.Drawing.Point(489, 122);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(60, 60);
+            this.AddButton.TabIndex = 10;
+            this.AddButton.UseVisualStyleBackColor = true;
+            // 
+            // SaveButton
+            // 
+            this.SaveButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveButton.Image")));
+            this.SaveButton.Location = new System.Drawing.Point(566, 123);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(60, 60);
+            this.SaveButton.TabIndex = 11;
+            this.SaveButton.UseVisualStyleBackColor = true;
+            // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(285, 136);
+            this.DeleteButton.Image = ((System.Drawing.Image)(resources.GetObject("DeleteButton.Image")));
+            this.DeleteButton.Location = new System.Drawing.Point(641, 124);
             this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(50, 50);
-            this.DeleteButton.TabIndex = 10;
+            this.DeleteButton.Size = new System.Drawing.Size(60, 62);
+            this.DeleteButton.TabIndex = 12;
             this.DeleteButton.UseVisualStyleBackColor = true;
-            // 
-            // EditButton
-            // 
-            this.EditButton.Location = new System.Drawing.Point(361, 136);
-            this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(50, 50);
-            this.EditButton.TabIndex = 11;
-            this.EditButton.UseVisualStyleBackColor = true;
-            // 
-            // ShowHideButton
-            // 
-            this.ShowHideButton.Location = new System.Drawing.Point(431, 136);
-            this.ShowHideButton.Name = "ShowHideButton";
-            this.ShowHideButton.Size = new System.Drawing.Size(50, 50);
-            this.ShowHideButton.TabIndex = 12;
-            this.ShowHideButton.UseVisualStyleBackColor = true;
             // 
             // NameTextBox
             // 
@@ -233,12 +242,63 @@
             this.ExtraInformationTextBox.TabIndex = 20;
             this.ExtraInformationTextBox.Text = "";
             // 
+            // DogButton
+            // 
+            this.DogButton.Location = new System.Drawing.Point(26, 134);
+            this.DogButton.Name = "DogButton";
+            this.DogButton.Size = new System.Drawing.Size(75, 35);
+            this.DogButton.TabIndex = 21;
+            this.DogButton.Text = "Dog";
+            this.DogButton.UseVisualStyleBackColor = true;
+            this.DogButton.Click += new System.EventHandler(this.DogButton_Click);
+            // 
+            // CatButton
+            // 
+            this.CatButton.Location = new System.Drawing.Point(107, 150);
+            this.CatButton.Name = "CatButton";
+            this.CatButton.Size = new System.Drawing.Size(75, 35);
+            this.CatButton.TabIndex = 22;
+            this.CatButton.Text = "Cat";
+            this.CatButton.UseVisualStyleBackColor = true;
+            // 
+            // RodentButton
+            // 
+            this.RodentButton.Location = new System.Drawing.Point(26, 169);
+            this.RodentButton.Name = "RodentButton";
+            this.RodentButton.Size = new System.Drawing.Size(75, 35);
+            this.RodentButton.TabIndex = 23;
+            this.RodentButton.Text = "Rodent";
+            this.RodentButton.UseVisualStyleBackColor = true;
+            // 
+            // ReptileButton
+            // 
+            this.ReptileButton.Location = new System.Drawing.Point(185, 169);
+            this.ReptileButton.Name = "ReptileButton";
+            this.ReptileButton.Size = new System.Drawing.Size(75, 35);
+            this.ReptileButton.TabIndex = 24;
+            this.ReptileButton.Text = "Reptile";
+            this.ReptileButton.UseVisualStyleBackColor = true;
+            // 
+            // OtherButton
+            // 
+            this.OtherButton.Location = new System.Drawing.Point(185, 134);
+            this.OtherButton.Name = "OtherButton";
+            this.OtherButton.Size = new System.Drawing.Size(75, 35);
+            this.OtherButton.TabIndex = 25;
+            this.OtherButton.Text = "Other";
+            this.OtherButton.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1026, 600);
+            this.Controls.Add(this.OtherButton);
+            this.Controls.Add(this.ReptileButton);
+            this.Controls.Add(this.RodentButton);
+            this.Controls.Add(this.CatButton);
+            this.Controls.Add(this.DogButton);
             this.Controls.Add(this.ExtraInformationTextBox);
             this.Controls.Add(this.AdoptionDateTextBox);
             this.Controls.Add(this.EnterDateTextBox);
@@ -246,9 +306,9 @@
             this.Controls.Add(this.AgeTextBox);
             this.Controls.Add(this.BreedTextBox);
             this.Controls.Add(this.NameTextBox);
-            this.Controls.Add(this.ShowHideButton);
-            this.Controls.Add(this.EditButton);
             this.Controls.Add(this.DeleteButton);
+            this.Controls.Add(this.SaveButton);
+            this.Controls.Add(this.AddButton);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -281,9 +341,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button DeleteButton;
-        private System.Windows.Forms.Button EditButton;
-        private System.Windows.Forms.Button ShowHideButton;
         private System.Windows.Forms.TextBox NameTextBox;
         private System.Windows.Forms.TextBox BreedTextBox;
         private System.Windows.Forms.TextBox AgeTextBox;
@@ -291,6 +351,11 @@
         private System.Windows.Forms.TextBox EnterDateTextBox;
         private System.Windows.Forms.TextBox AdoptionDateTextBox;
         private System.Windows.Forms.RichTextBox ExtraInformationTextBox;
+        private System.Windows.Forms.Button DogButton;
+        private System.Windows.Forms.Button CatButton;
+        private System.Windows.Forms.Button RodentButton;
+        private System.Windows.Forms.Button ReptileButton;
+        private System.Windows.Forms.Button OtherButton;
     }
 }
 
