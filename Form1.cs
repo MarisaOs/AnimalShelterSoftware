@@ -30,20 +30,27 @@ namespace AnimalShelterSoftware
         {
             InitializeComponent();
 
-            AddButton.BackgroundImageLayout = ImageLayout.Stretch;
-            DeleteButton.BackgroundImageLayout = ImageLayout.Stretch;
-            SaveButton.BackgroundImageLayout = ImageLayout.Stretch;
 
 
         }
 
-
+        //Todo, clear fields when new section is selected
         #region AnimalButton
 
         private void DogButton_Click(object sender, EventArgs e)
         {
             CurrentAnimal = "Dog";
+            #region Clear
             CurrentAnimalsList.Items.Clear();
+            NameTextBox.Text = "";
+            BreedTextBox.Text = "";
+            AgeTextBox.Text = "";
+            AppearanceTextBox.Text = "";
+            EnterDateTextBox.Text = "";
+            AdoptionDateTextBox.Text = "";
+            ExtraInformationTextBox.Text = "";
+            GenderTextBox.Text = "";
+            #endregion
             AnimalImage.Image = Image.FromFile(@"C:\Users\DSU\source\repos\AnimalShelterSoftware\AnimalImages\C#DogArt.jpg");
             AnimalImage.SizeMode = PictureBoxSizeMode.StretchImage;
 
@@ -61,7 +68,17 @@ namespace AnimalShelterSoftware
         private void CatButton_Click(object sender, EventArgs e)
         {
             CurrentAnimal = "Cat";
+            #region Clear
             CurrentAnimalsList.Items.Clear();
+            NameTextBox.Text = "";
+            BreedTextBox.Text = "";
+            AgeTextBox.Text = "";
+            AppearanceTextBox.Text = "";
+            EnterDateTextBox.Text = "";
+            AdoptionDateTextBox.Text = "";
+            ExtraInformationTextBox.Text = "";
+            GenderTextBox.Text = "";
+            #endregion
             AnimalImage.Image = Image.FromFile(@"C:\Users\DSU\source\repos\AnimalShelterSoftware\AnimalImages\catart.jpg");
             AnimalImage.SizeMode = PictureBoxSizeMode.StretchImage;
 
@@ -76,7 +93,17 @@ namespace AnimalShelterSoftware
         private void OtherButton_Click(object sender, EventArgs e)
         {
             CurrentAnimal = "Other";
+            #region Clear
             CurrentAnimalsList.Items.Clear();
+            NameTextBox.Text = "";
+            BreedTextBox.Text = "";
+            AgeTextBox.Text = "";
+            AppearanceTextBox.Text = "";
+            EnterDateTextBox.Text = "";
+            AdoptionDateTextBox.Text = "";
+            ExtraInformationTextBox.Text = "";
+            GenderTextBox.Text = "";
+            #endregion
             AnimalImage.Image = Image.FromFile(@"C:\Users\DSU\source\repos\AnimalShelterSoftware\AnimalImages\Others.jpg");
             AnimalImage.SizeMode = PictureBoxSizeMode.StretchImage;
 
@@ -91,7 +118,17 @@ namespace AnimalShelterSoftware
         private void RodentButton_Click(object sender, EventArgs e)
         {
             CurrentAnimal = "Rodent";
+            #region Clear
             CurrentAnimalsList.Items.Clear();
+            NameTextBox.Text = "";
+            BreedTextBox.Text = "";
+            AgeTextBox.Text = "";
+            AppearanceTextBox.Text = "";
+            EnterDateTextBox.Text = "";
+            AdoptionDateTextBox.Text = "";
+            ExtraInformationTextBox.Text = "";
+            GenderTextBox.Text = "";
+            #endregion
             AnimalImage.Image = Image.FromFile(@"C:\Users\DSU\source\repos\AnimalShelterSoftware\AnimalImages\Hamster.jpg");
             AnimalImage.SizeMode = PictureBoxSizeMode.StretchImage;
 
@@ -106,7 +143,17 @@ namespace AnimalShelterSoftware
         private void ReptileButton_Click(object sender, EventArgs e)
         {
             CurrentAnimal = "Reptile";
+            #region Clear
             CurrentAnimalsList.Items.Clear();
+            NameTextBox.Text = "";
+            BreedTextBox.Text = "";
+            AgeTextBox.Text = "";
+            AppearanceTextBox.Text = "";
+            EnterDateTextBox.Text = "";
+            AdoptionDateTextBox.Text = "";
+            ExtraInformationTextBox.Text = "";
+            GenderTextBox.Text = "";
+            #endregion
             AnimalImage.Image = Image.FromFile(@"C:\Users\DSU\source\repos\AnimalShelterSoftware\AnimalImages\Reptiles.jpg");
             AnimalImage.SizeMode = PictureBoxSizeMode.StretchImage;
 
@@ -166,9 +213,8 @@ namespace AnimalShelterSoftware
             }
             if (CurrentAnimal == "Other")
             {
-                Reptile CurrentReptile = new Reptile();
+                OtherAnimal CurrentOtherAnimal = new OtherAnimal();
                 Boolean IsPoisonous = false;
-                Boolean IsVenomous = false;
 
                 for (int i = 0; i < OtherAnimalsFileInformationLine.Length; i++)
                 {
@@ -177,14 +223,9 @@ namespace AnimalShelterSoftware
                     if (OtherFileWords[0] == NameOfSelectedAnimal)
                     {
                         #region ToxicCheck
-                        //Venomous check
-                        IsVenomous = CurrentReptile.WarnIfVenomous(OtherFileWords[1]);
-                        if (IsVenomous)
-                        {
-                            MessageBox.Show("This animal is Venomous");
-                        }
+                       
                         //Poisonous check
-                        IsPoisonous = CurrentReptile.WarnIfPoisonous(OtherFileWords[1]);
+                        IsPoisonous = CurrentOtherAnimal.WarnIfPoisonous(OtherFileWords[1], OtherFileWords[0]);
                         if (IsPoisonous)
                         {
                             MessageBox.Show("This animal is Poisonous");
@@ -285,10 +326,49 @@ namespace AnimalShelterSoftware
         private void SaveButton_Click(object sender, EventArgs e)
         {
             //Format the information into a string and send to the Animal class in the save button
-            string[] NewAnimal = { };
+            string[] NewAnimal = {"","","","","","","","" };
 
             NewAnimal[0] = NameTextBox.Text;
+            NewAnimal[1] = BreedTextBox.Text;
+            NewAnimal[2] = AgeTextBox.Text;
+            NewAnimal[3] = AppearanceTextBox.Text;
+            NewAnimal[4] = EnterDateTextBox.Text;
+            NewAnimal[5] = AdoptionDateTextBox.Text;
+            NewAnimal[6] = GenderTextBox.Text;
+            NewAnimal[7] = ExtraInformationTextBox.Text;
 
+            if (CurrentAnimal == "Dog")
+            {
+                Dog AddDog = new Dog();
+
+                AddDog.SaveAnimalToFile(@"C:\Users\DSU\Desktop\ShelterData\Dogs.txt", NewAnimal);
+                DogFileInformationLine = File.ReadAllLines(@"C:\Users\DSU\Desktop\ShelterData\Dogs.txt");
+            }
+            if(CurrentAnimal == "Cat")
+            {
+                Cat AddCat = new Cat();
+                AddCat.SaveAnimalToFile(@"C:\Users\DSU\Desktop\ShelterData\Cats.txt", NewAnimal);
+                CatFileInformationLine = File.ReadAllLines(@"C:\Users\DSU\Desktop\ShelterData\Cats.txt");
+
+            }
+            if (CurrentAnimal == "Rodent")
+            {
+                Rodent AddRodent = new Rodent();
+                AddRodent.SaveAnimalToFile(@"C:\Users\DSU\Desktop\ShelterData\Rodents.txt", NewAnimal);
+                RodentsFileInformationLine = File.ReadAllLines(@"C:\Users\DSU\Desktop\ShelterData\Rodents.txt");
+            }
+            if (CurrentAnimal == "Reptile")
+            {
+                Reptile AddReptile = new Reptile();
+                AddReptile.SaveAnimalToFile(@"C:\Users\DSU\Desktop\ShelterData\Reptiles.txt", NewAnimal);
+                ReptilesFileInformationLine = File.ReadAllLines(@"C:\Users\DSU\Desktop\ShelterData\Reptiles.txt");
+            }
+            if (CurrentAnimal == "Other")
+            {
+                OtherAnimal AddOther = new OtherAnimal();
+                AddOther.SaveAnimalToFile(@"C:\Users\DSU\Desktop\ShelterData\Other.txt", NewAnimal);
+                OtherAnimalsFileInformationLine = File.ReadAllLines(@"C:\Users\DSU\Desktop\ShelterData\Other.txt");
+            }
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
@@ -298,8 +378,10 @@ namespace AnimalShelterSoftware
             //string item = usertxt2.Text.Trim();
             //var lines = File.ReadAllLines(usersPath).Where(line => line.Trim() != item).ToArray();
             //File.WriteAllLines(usersPath, lines);
+            
 
         }
+      
 
         #region Other
         private void Form1_Load(object sender, EventArgs e)
@@ -330,6 +412,7 @@ namespace AnimalShelterSoftware
         {
 
         }
+
 
 
 

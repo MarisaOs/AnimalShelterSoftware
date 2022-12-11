@@ -264,7 +264,7 @@
             // 
             // CatButton
             // 
-            this.CatButton.Location = new System.Drawing.Point(107, 150);
+            this.CatButton.Location = new System.Drawing.Point(107, 134);
             this.CatButton.Name = "CatButton";
             this.CatButton.Size = new System.Drawing.Size(75, 35);
             this.CatButton.TabIndex = 22;

@@ -121,7 +121,7 @@
   <data name="AddButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAAlRJREFUWEfN2D1uFEEQBeB1QETiEMwBcAIJJyEm9UngBNg+gM0BICMhIjMJESLh
+        wQAADsEBuJFr7QAAAlRJREFUWEfN2D1uFEEQBeB1QETiEMwBcAIJJyEm9UngBNg+gM0BICMhIjMJESLh
         BEiQImQJ2+8bza52B+Odne5d+klPmp+uqtcz3VU1M6uEe+FB+LinY9f+G/bDF+FZ+DW8DK8HdM09Y4xl
         s3U8Dc/DXyERV+G38F34OnzV07Fr7hljLBu2fFTHg/BN+CcU8GN4FD4M18EYY9mw5YMvPqvgefgj9BTe
         h8/CqWDLB1988j0Ze+HL0Ky/h0XOBuCLT77FEGsjMDgNzfRT+CisDT75FuMk3EikWTH8EN53YUvgWwyx
@@ -137,7 +137,7 @@
   <data name="SaveButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        gQAADoEBR7AuhAAAAaNJREFUWEfl2TlKBEEYxfFxy1zwBh5CEDETNwzMDQTBwAuIkV7GUI0MvIBr6lEU
+        gAAADoABlffMYAAAAaNJREFUWEfl2TlKBEEYxfFxy1zwBh5CEDETNwzMDQTBwAuIkV7GUI0MvIBr6lEU
         wQVB33+0h6J5PdNbzRT44AdaXfXVQwObsfOXNXmUD/k2poVsinteBTMqhXJf4oZlYhSckrnfL/uHn5wb
         FIpRkHLcPbBk0a81FKsg3w8smR/gxCyIB5kVm/BwkdgFcS+2ZLipSHZwVdzzKphB5iX/zJbMb3IWhUzK
         rhzUxNkJIcx0d93JjPTiNuVdSNs5F3cXbqVX0m1wzmRBmoYZzHJ3hG6kW9I97OdVnmvirJtZ5FLsg1R8
@@ -150,7 +150,7 @@
   <data name="DeleteButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EgAACxIB0t1+/AAAAvRJREFUWEftmEvIDWEYx49rIaSUjWQh5LIQJaKsSMJK7gtZiGxsZCELhRIrlw0W
+        EQAACxEBf2RfkQAAAvRJREFUWEftmEvIDWEYx49rIaSUjWQh5LIQJaKsSMJK7gtZiGxsZCELhRIrlw0W
         CrkVuZVcyq1ECeUSEUrIJck9t99f89TT28x7vm/mPbPhV7/F959znnnmOzPzPjONCvTF0/gDfxeobWex
         H9bONsxrKs8dWDvnUDu/gcsKvIb6zCWsnSW4ERf8/SufuajPqNl/jy7Ysya7YrvQz/YV/YneSr/hImwT
         HfAR5hVqpc9Q+27KGMwrUIfjsSmrMe/LdbgWmzISD+HRmj2Mo/A/tTIE7+HzFnkfh2Fp5mPeyZzSNt//

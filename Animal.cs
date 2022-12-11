@@ -7,27 +7,34 @@ using System.Threading.Tasks;
 
 namespace AnimalShelterSoftware
 {
-    public class Animal
+    public abstract class Animal
     {
         //Private information
         private string PreviousOwnerInfo = "Redacted";
-    
+
+        #region Constructors
+
+        //Overloaded constructors
         public Animal()
         {
             
 
         }
 
-       
+        public Animal(string[] FileLine)
+        {
 
-        //List to send to file
+        }
+        #endregion
+
+        //Animal List for events
         private List<string> _AnimalFileList;
         public List<string> AnimalFileList
         {
             get { return _AnimalFileList; }
             set { _AnimalFileList = value; }
         }
-        //Fields
+        //Properties
         #region Name
         private string _Name;
         public string Name
@@ -193,8 +200,32 @@ namespace AnimalShelterSoftware
 
 
             string AnimalInfoFormated = Name + " " + Breed + " " + Age + " " + Appearance + " " + EnteredShelterDate + " " + AdoptionDate + " " + Gender + " ~" + ExtraInformation;
-            File.AppendAllText(AnimalFilePath,AnimalInfoFormated);
+            File.AppendAllText(AnimalFilePath, Environment.NewLine + AnimalInfoFormated);
         }
+
+        //Polymorphism for Reptiles and Other to check if animal is poisonous
+        #region PolyFunction
+        public Boolean WarnIfPoisonous(string SpeciesName, string AnimalsName)
+        {
+            string[] LegalPoisonousAnimals = { "DartFrog", "PurpleTreeTarantula", "BlueRingOctopus", "Platypus", "Pufferfish" };
+            Boolean isPoisonous = false;
+
+            foreach (string v in LegalPoisonousAnimals)
+            {
+                if (v == SpeciesName)
+                {
+                    isPoisonous = true;
+                    AnimalFileList.Add(AnimalsName);
+                }
+            }
+
+            return isPoisonous;
+        }
+        #endregion
+
+
+       
+        
 
 
     }

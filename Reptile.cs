@@ -13,11 +13,11 @@ namespace AnimalShelterSoftware
       
 
         private string[] LegalVenomousAnimals = {"HogNoseSnake","StingRay","Scorpion","GilaMonster" };
-        private string[] LegalPoisonousAnimals = {"DartFrog","PurpleTreeTarantula","BlueRingOctopus"};
+        private string[] LegalPoisonousAnimals = {"DartFrog","PurpleTreeTarantula","BlueRingOctopus","Platypus"};
 
         //Maintenance level
         #region MaintLevel
-        private string _MaintenanceLevel;
+        private string _MaintenanceLevel = "Moderate";
         public string MaintenanceLevel
         {
             get
@@ -25,8 +25,7 @@ namespace AnimalShelterSoftware
                 return _MaintenanceLevel;
             }
             set
-            {
-                value = "Moderate";
+            {              
                 _MaintenanceLevel = value;              
 
             }
@@ -53,7 +52,8 @@ namespace AnimalShelterSoftware
         #endregion
 
         #region IsPoisonousCheck
-        //Poisonous Webs the Tarantula
+
+        //Polymorphism
         public Boolean WarnIfPoisonous(string SpeciesName)
         {
             Boolean isPoisonous = _isPoisonous;
@@ -71,4 +71,5 @@ namespace AnimalShelterSoftware
         #endregion
     }
 
+  
 }
