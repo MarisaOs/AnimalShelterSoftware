@@ -23,10 +23,6 @@ namespace AnimalShelterSoftware
             List<string> RodentList = File.ReadAllLines(@"C:\Users\DSU\Desktop\ShelterData\Dogs.txt").ToList();
             List<string> OtherList = File.ReadAllLines(@"C:\Users\DSU\Desktop\ShelterData\Dogs.txt").ToList();
 
-            //Parse through the data 
-
-
-
 
         }
     }

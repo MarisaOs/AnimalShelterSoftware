@@ -8,6 +8,7 @@ namespace AnimalShelterSoftware
 {
     internal class OtherAnimal : Animal
     {
+        #region Properties
         private string _Species;
         public string Species
         {
@@ -16,7 +17,7 @@ namespace AnimalShelterSoftware
                 return _Species;
             }
             set
-            {               
+            {
                 _Species = value;
 
             }
@@ -34,10 +35,15 @@ namespace AnimalShelterSoftware
 
             }
         }
+        #endregion
 
+        #region Method
+
+       
 
         public Boolean NeedPermitToOwn(string State, string AnimalSpecies)
         {
+            
             Boolean NeedsPermit = false;
             string[] SpeciesThatNeedPermit = {"Fox","PrairieDog","Horse","Skunk","Python","Viper" };
 
@@ -49,15 +55,30 @@ namespace AnimalShelterSoftware
                    
                 }
             }
-
-
-
             return NeedsPermit;
         }
+        #endregion
+        //PolyMorphic method
+        #region OverrideMethod
+        public override Boolean WarnIfPoisonous(string SpeciesName)
+        {
+            string[] LegalPoisonousAnimals = { "DartFrog", "PurpleTreeTarantula", "BlueRingOctopus", "Platypus", "Pufferfish" };
+            Boolean isPoisonous = false;
 
+            foreach (string v in LegalPoisonousAnimals)
+            {
+                if (v == SpeciesName)
+                {
+                    isPoisonous = true;
 
+                }
+            }
+
+            return isPoisonous;
+        }
+        #endregion
 
 
     }
-    
+
 }

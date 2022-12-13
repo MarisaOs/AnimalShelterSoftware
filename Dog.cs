@@ -8,6 +8,8 @@ namespace AnimalShelterSoftware
 {
     internal class Dog : Animal
     {
+
+        #region Properties
         private Boolean _IsSpayedOrNeutered;
         public Boolean IsSpayedOrNeutered
         {
@@ -35,10 +37,9 @@ namespace AnimalShelterSoftware
 
             }
         }
+        #endregion
 
-
-
-
+        #region Methods
         public Boolean ValidateVaccinations(string DogName, string[] CurrentVaccinations)
         {
             Boolean VaccinationsUTD = true;
@@ -52,14 +53,10 @@ namespace AnimalShelterSoftware
                 }
             }
 
-
-
             return VaccinationsUTD;
         }
-
+        #endregion
 
     }
 
-    
-    
 }

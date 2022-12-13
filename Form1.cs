@@ -17,15 +17,17 @@ namespace AnimalShelterSoftware
     {
         //Keep track of what list we are in for saving and editing purposes
         public string CurrentAnimal = "";
-        //File lines
+        //File lines, please be sure you have these files when you try to run the program or it will crash
+        #region FileToArray
+       
         string[] DogFileInformationLine = File.ReadAllLines(@"C:\Users\DSU\Desktop\ShelterData\Dogs.txt");
         string[] CatFileInformationLine = File.ReadAllLines(@"C:\Users\DSU\Desktop\ShelterData\Cats.txt");
         string[] OtherAnimalsFileInformationLine = File.ReadAllLines(@"C:\Users\DSU\Desktop\ShelterData\Other.txt");
         string[] ReptilesFileInformationLine = File.ReadAllLines(@"C:\Users\DSU\Desktop\ShelterData\Reptiles.txt");
         string[] RodentsFileInformationLine = File.ReadAllLines(@"C:\Users\DSU\Desktop\ShelterData\Rodents.txt");
+        #endregion
 
-        
-      
+
         public Form1()
         {
             InitializeComponent();
@@ -35,130 +37,171 @@ namespace AnimalShelterSoftware
 
         private void DogButton_Click(object sender, EventArgs e)
         {
-            CurrentAnimal = "Dog";
-            #region Clear
-            CurrentAnimalsList.Items.Clear();
-            NameTextBox.Text = "";
-            BreedTextBox.Text = "";
-            AgeTextBox.Text = "";
-            AppearanceTextBox.Text = "";
-            EnterDateTextBox.Text = "";
-            AdoptionDateTextBox.Text = "";
-            ExtraInformationTextBox.Text = "";
-            GenderTextBox.Text = "";
-            #endregion
-            AnimalImage.Image = Image.FromFile(@"C:\Users\DSU\source\repos\AnimalShelterSoftware\AnimalImages\C#DogArt.jpg");
-            AnimalImage.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            //Parse through to get name then add to Doglist
-            for (int i = 0; i < DogFileInformationLine.Length; i++)
+            try 
             {
-                string[] DogFileWords = DogFileInformationLine[i].Split(' ');
-                CurrentAnimalsList.Items.Add(DogFileWords[0]);
+                CurrentAnimal = "Dog";
+                #region Clear
+                CurrentAnimalsList.Items.Clear();
+                NameTextBox.Text = "";
+                BreedTextBox.Text = "";
+                AgeTextBox.Text = "";
+                AppearanceTextBox.Text = "";
+                EnterDateTextBox.Text = "";
+                AdoptionDateTextBox.Text = "";
+                ExtraInformationTextBox.Text = "";
+                GenderTextBox.Text = "";
+                #endregion
+                AnimalImage.Image = Image.FromFile(@"C:\Users\DSU\source\repos\AnimalShelterSoftware\AnimalImages\C#DogArt.jpg");
+                AnimalImage.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                //Parse through to get name then add to Doglist
+                for (int i = 0; i < DogFileInformationLine.Length; i++)
+                {
+                    string[] DogFileWords = DogFileInformationLine[i].Split(' ');
+                    CurrentAnimalsList.Items.Add(DogFileWords[0]);
+                }
             }
-
-
-            //For the save button, we can grab the specific array its in and put the array into the save as a parameter.
+            catch
+            {
+                MessageBox.Show("Please be sure you have the necessary Dog file in the right location");
+                
+            }
+  
         }
 
         private void CatButton_Click(object sender, EventArgs e)
         {
-            CurrentAnimal = "Cat";
-            #region Clear
-            CurrentAnimalsList.Items.Clear();
-            NameTextBox.Text = "";
-            BreedTextBox.Text = "";
-            AgeTextBox.Text = "";
-            AppearanceTextBox.Text = "";
-            EnterDateTextBox.Text = "";
-            AdoptionDateTextBox.Text = "";
-            ExtraInformationTextBox.Text = "";
-            GenderTextBox.Text = "";
-            #endregion
-            AnimalImage.Image = Image.FromFile(@"C:\Users\DSU\source\repos\AnimalShelterSoftware\AnimalImages\catart.jpg");
-            AnimalImage.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            //Parse through to get name then add to Catlist
-            for (int i = 0; i < CatFileInformationLine.Length; i++)
+            try
             {
-                string[] CatFileWords = CatFileInformationLine[i].Split(' ');
-                CurrentAnimalsList.Items.Add(CatFileWords[0]);
+                CurrentAnimal = "Cat";
+                #region Clear
+                CurrentAnimalsList.Items.Clear();
+                NameTextBox.Text = "";
+                BreedTextBox.Text = "";
+                AgeTextBox.Text = "";
+                AppearanceTextBox.Text = "";
+                EnterDateTextBox.Text = "";
+                AdoptionDateTextBox.Text = "";
+                ExtraInformationTextBox.Text = "";
+                GenderTextBox.Text = "";
+                #endregion
+                AnimalImage.Image = Image.FromFile(@"C:\Users\DSU\source\repos\AnimalShelterSoftware\AnimalImages\catart.jpg");
+                AnimalImage.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                //Parse through to get name then add to Catlist
+                for (int i = 0; i < CatFileInformationLine.Length; i++)
+                {
+                    string[] CatFileWords = CatFileInformationLine[i].Split(' ');
+                    CurrentAnimalsList.Items.Add(CatFileWords[0]);
+                }
             }
+            catch
+            {
+                MessageBox.Show("Please be sure you have the necessary Cat file in the right location");
+
+            }      
         }
 
         private void OtherButton_Click(object sender, EventArgs e)
         {
-            CurrentAnimal = "Other";
-            #region Clear
-            CurrentAnimalsList.Items.Clear();
-            NameTextBox.Text = "";
-            BreedTextBox.Text = "";
-            AgeTextBox.Text = "";
-            AppearanceTextBox.Text = "";
-            EnterDateTextBox.Text = "";
-            AdoptionDateTextBox.Text = "";
-            ExtraInformationTextBox.Text = "";
-            GenderTextBox.Text = "";
-            #endregion
-            AnimalImage.Image = Image.FromFile(@"C:\Users\DSU\source\repos\AnimalShelterSoftware\AnimalImages\Others.jpg");
-            AnimalImage.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            //Parse through to get name then add to Otherlist
-            for (int i = 0; i < OtherAnimalsFileInformationLine.Length; i++)
+            try
             {
-                string[] OtherFileWords = OtherAnimalsFileInformationLine[i].Split(' ');
-                CurrentAnimalsList.Items.Add(OtherFileWords[0]);
+                CurrentAnimal = "Other";
+                #region Clear
+                CurrentAnimalsList.Items.Clear();
+                NameTextBox.Text = "";
+                BreedTextBox.Text = "";
+                AgeTextBox.Text = "";
+                AppearanceTextBox.Text = "";
+                EnterDateTextBox.Text = "";
+                AdoptionDateTextBox.Text = "";
+                ExtraInformationTextBox.Text = "";
+                GenderTextBox.Text = "";
+                #endregion
+                AnimalImage.Image = Image.FromFile(@"C:\Users\DSU\source\repos\AnimalShelterSoftware\AnimalImages\Others.jpg");
+                AnimalImage.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                //Parse through to get name then add to Otherlist
+                for (int i = 0; i < OtherAnimalsFileInformationLine.Length; i++)
+                {
+                    string[] OtherFileWords = OtherAnimalsFileInformationLine[i].Split(' ');
+                    CurrentAnimalsList.Items.Add(OtherFileWords[0]);
+                }
             }
+            catch
+            {
+                MessageBox.Show("Please be sure you have the necessary OtherAnimals file in the right location");
+
+            }
+           
         }
 
         private void RodentButton_Click(object sender, EventArgs e)
         {
-            CurrentAnimal = "Rodent";
-            #region Clear
-            CurrentAnimalsList.Items.Clear();
-            NameTextBox.Text = "";
-            BreedTextBox.Text = "";
-            AgeTextBox.Text = "";
-            AppearanceTextBox.Text = "";
-            EnterDateTextBox.Text = "";
-            AdoptionDateTextBox.Text = "";
-            ExtraInformationTextBox.Text = "";
-            GenderTextBox.Text = "";
-            #endregion
-            AnimalImage.Image = Image.FromFile(@"C:\Users\DSU\source\repos\AnimalShelterSoftware\AnimalImages\Hamster.jpg");
-            AnimalImage.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            //Parse through to get name then add to Rodentlist
-            for (int i = 0; i < RodentsFileInformationLine.Length; i++)
+            try
             {
-                string[] RodentFileWords = RodentsFileInformationLine[i].Split(' ');
-                CurrentAnimalsList.Items.Add(RodentFileWords[0]);
+                CurrentAnimal = "Rodent";
+                #region Clear
+                CurrentAnimalsList.Items.Clear();
+                NameTextBox.Text = "";
+                BreedTextBox.Text = "";
+                AgeTextBox.Text = "";
+                AppearanceTextBox.Text = "";
+                EnterDateTextBox.Text = "";
+                AdoptionDateTextBox.Text = "";
+                ExtraInformationTextBox.Text = "";
+                GenderTextBox.Text = "";
+                #endregion
+                AnimalImage.Image = Image.FromFile(@"C:\Users\DSU\source\repos\AnimalShelterSoftware\AnimalImages\Hamster.jpg");
+                AnimalImage.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                //Parse through to get name then add to Rodentlist
+                for (int i = 0; i < RodentsFileInformationLine.Length; i++)
+                {
+                    string[] RodentFileWords = RodentsFileInformationLine[i].Split(' ');
+                    CurrentAnimalsList.Items.Add(RodentFileWords[0]);
+                }
             }
+            catch
+            {
+                MessageBox.Show("Please be sure you have the necessary Rodent file in the right location");
+
+            }
+           
         }
 
         private void ReptileButton_Click(object sender, EventArgs e)
         {
-            CurrentAnimal = "Reptile";
-            #region Clear
-            CurrentAnimalsList.Items.Clear();
-            NameTextBox.Text = "";
-            BreedTextBox.Text = "";
-            AgeTextBox.Text = "";
-            AppearanceTextBox.Text = "";
-            EnterDateTextBox.Text = "";
-            AdoptionDateTextBox.Text = "";
-            ExtraInformationTextBox.Text = "";
-            GenderTextBox.Text = "";
-            #endregion
-            AnimalImage.Image = Image.FromFile(@"C:\Users\DSU\source\repos\AnimalShelterSoftware\AnimalImages\Reptiles.jpg");
-            AnimalImage.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            //Parse through to get name then add to Reptilelist
-            for (int i = 0; i < ReptilesFileInformationLine.Length; i++)
+            try
             {
-                string[] ReptileFileWords = ReptilesFileInformationLine[i].Split(' ');
-                CurrentAnimalsList.Items.Add(ReptileFileWords[0]);
+                CurrentAnimal = "Reptile";
+                #region Clear
+                CurrentAnimalsList.Items.Clear();
+                NameTextBox.Text = "";
+                BreedTextBox.Text = "";
+                AgeTextBox.Text = "";
+                AppearanceTextBox.Text = "";
+                EnterDateTextBox.Text = "";
+                AdoptionDateTextBox.Text = "";
+                ExtraInformationTextBox.Text = "";
+                GenderTextBox.Text = "";
+                #endregion
+                AnimalImage.Image = Image.FromFile(@"C:\Users\DSU\source\repos\AnimalShelterSoftware\AnimalImages\Reptiles.jpg");
+                AnimalImage.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                //Parse through to get name then add to Reptilelist
+                for (int i = 0; i < ReptilesFileInformationLine.Length; i++)
+                {
+                    string[] ReptileFileWords = ReptilesFileInformationLine[i].Split(' ');
+                    CurrentAnimalsList.Items.Add(ReptileFileWords[0]);
+                }
             }
+            catch
+            {
+                MessageBox.Show("Please be sure you have the necessary Reptile file in the right location");
+
+            }
+          
         }
         #endregion
 
@@ -221,7 +264,7 @@ namespace AnimalShelterSoftware
                         #region ToxicCheck
                        
                         //Poisonous check
-                        IsPoisonous = CurrentOtherAnimal.WarnIfPoisonous(OtherFileWords[1], OtherFileWords[0]);
+                        IsPoisonous = CurrentOtherAnimal.WarnIfPoisonous(OtherFileWords[1]);
                         if (IsPoisonous)
                         {
                             MessageBox.Show("This animal is Poisonous");
@@ -299,12 +342,10 @@ namespace AnimalShelterSoftware
         }
         #endregion
 
-
         //Add Save Delete
         #region Add
         private void AddButton_Click(object sender, EventArgs e)
-        {
-            
+        {    
             //Use the current selected animal still.
             NameTextBox.Text = "";
             BreedTextBox.Text = "";
@@ -320,166 +361,232 @@ namespace AnimalShelterSoftware
         #region Save
         private void SaveButton_Click(object sender, EventArgs e)
         {
+
             //Format the information into a string and send to the Animal class in the save button
             string[] NewAnimal = {"","","","","","","","" };
 
-            NewAnimal[0] = NameTextBox.Text;
-            NewAnimal[1] = BreedTextBox.Text;
-            NewAnimal[2] = AgeTextBox.Text;
-            NewAnimal[3] = AppearanceTextBox.Text;
-            NewAnimal[4] = EnterDateTextBox.Text;
-            NewAnimal[5] = AdoptionDateTextBox.Text;
-            NewAnimal[6] = GenderTextBox.Text;
-            NewAnimal[7] = ExtraInformationTextBox.Text;
+            #region InputValidation
+            if (NameTextBox.Text == "")
+            {
+                MessageBox.Show("Please enter a name before saving");
+            }
+            if (BreedTextBox.Text == "")
+            {
+                MessageBox.Show("Please enter breed before saving");
+            }
+            if (AgeTextBox.Text == "")
+            {
+                MessageBox.Show("Please enter age before saving");
+            }
+            if (AppearanceTextBox.Text == "")
+            {
+                MessageBox.Show("Please enter appearance before saving");
+            }
+            if (EnterDateTextBox.Text == "")
+            {
+                MessageBox.Show("Please enter entrance date before saving");
+            }
+            if (GenderTextBox.Text == "")
+            {
+                MessageBox.Show("Please enter gender before saving");
+            }
+            if (ExtraInformationTextBox.Text == "")
+            {
+                MessageBox.Show("Please enter extra information before saving");
+            }
+            #endregion
+            //If x y and z != ""
+            if (NameTextBox.Text != "" && BreedTextBox.Text != "" && AgeTextBox.Text != "" && AppearanceTextBox.Text != "" && EnterDateTextBox.Text != "" && GenderTextBox.Text != "" && ExtraInformationTextBox.Text != "")
+            {
+                NewAnimal[0] = NameTextBox.Text;
+                NewAnimal[1] = BreedTextBox.Text;
+                NewAnimal[2] = AgeTextBox.Text;
+                NewAnimal[3] = AppearanceTextBox.Text;
+                NewAnimal[4] = EnterDateTextBox.Text;
+                NewAnimal[5] = AdoptionDateTextBox.Text;
+                NewAnimal[6] = GenderTextBox.Text;
+                NewAnimal[7] = ExtraInformationTextBox.Text;
 
-            if (CurrentAnimal == "Dog")
-            {
-                Dog AddDog = new Dog();
+                if (CurrentAnimal == "Dog")
+                {
+                    Dog AddDog = new Dog();
 
-                AddDog.SaveAnimalToFile(@"C:\Users\DSU\Desktop\ShelterData\Dogs.txt", NewAnimal);
-                DogFileInformationLine = File.ReadAllLines(@"C:\Users\DSU\Desktop\ShelterData\Dogs.txt");
-            }
-            if(CurrentAnimal == "Cat")
-            {
-                Cat AddCat = new Cat();
-                AddCat.SaveAnimalToFile(@"C:\Users\DSU\Desktop\ShelterData\Cats.txt", NewAnimal);
-                CatFileInformationLine = File.ReadAllLines(@"C:\Users\DSU\Desktop\ShelterData\Cats.txt");
+                    AddDog.SaveAnimalToFile(@"C:\Users\DSU\Desktop\ShelterData\Dogs.txt", NewAnimal);
+                    DogFileInformationLine = File.ReadAllLines(@"C:\Users\DSU\Desktop\ShelterData\Dogs.txt");
+                }
+                if (CurrentAnimal == "Cat")
+                {
+                    Cat AddCat = new Cat();
+                    AddCat.SaveAnimalToFile(@"C:\Users\DSU\Desktop\ShelterData\Cats.txt", NewAnimal);
+                    CatFileInformationLine = File.ReadAllLines(@"C:\Users\DSU\Desktop\ShelterData\Cats.txt");
 
+                }
+                if (CurrentAnimal == "Rodent")
+                {
+                    Rodent AddRodent = new Rodent();
+                    AddRodent.SaveAnimalToFile(@"C:\Users\DSU\Desktop\ShelterData\Rodents.txt", NewAnimal);
+                    RodentsFileInformationLine = File.ReadAllLines(@"C:\Users\DSU\Desktop\ShelterData\Rodents.txt");
+                }
+                if (CurrentAnimal == "Reptile")
+                {
+                    Reptile AddReptile = new Reptile();
+                    AddReptile.SaveAnimalToFile(@"C:\Users\DSU\Desktop\ShelterData\Reptiles.txt", NewAnimal);
+                    ReptilesFileInformationLine = File.ReadAllLines(@"C:\Users\DSU\Desktop\ShelterData\Reptiles.txt");
+                }
+                if (CurrentAnimal == "Other")
+                {
+                    OtherAnimal AddOther = new OtherAnimal();
+                    AddOther.SaveAnimalToFile(@"C:\Users\DSU\Desktop\ShelterData\Other.txt", NewAnimal);
+                    OtherAnimalsFileInformationLine = File.ReadAllLines(@"C:\Users\DSU\Desktop\ShelterData\Other.txt");
+                }
             }
-            if (CurrentAnimal == "Rodent")
+        }
+            
+
+           
+        #endregion
+
+        #region Delete
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            try
             {
-                Rodent AddRodent = new Rodent();
-                AddRodent.SaveAnimalToFile(@"C:\Users\DSU\Desktop\ShelterData\Rodents.txt", NewAnimal);
-                RodentsFileInformationLine = File.ReadAllLines(@"C:\Users\DSU\Desktop\ShelterData\Rodents.txt");
+                string NameOfSelectedAnimal = (CurrentAnimalsList.SelectedItem ?? "(none)").ToString();
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete " + NameOfSelectedAnimal + "'s information?", "Delete Confirmation", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    //Grabs everything that isnt the deleted line and rewrites it.         
+                    string[] NewFileContentsArray;
+                    var NewFileContentsList = new List<string>();
+
+                    #region DeleteDog
+                    if (CurrentAnimal == "Dog")
+                    {
+                        for (int i = 0; i < DogFileInformationLine.Length; i++)
+                        {
+                            //Grab everything that isnt the line we want to remove
+                            string[] DogFileWords = DogFileInformationLine[i].Split(' ');
+                            if (DogFileWords[0] != NameOfSelectedAnimal)
+                            {
+                                NewFileContentsList.Add(DogFileInformationLine[i]);
+
+                            }
+
+                        }
+                        NewFileContentsArray = NewFileContentsList.ToArray();
+
+                        ////Save NewFile Contents to the file
+                        Dog DeleteDog = new Dog();
+                        DeleteDog.DeleteAnimalInformation(@"C:\Users\DSU\Desktop\ShelterData\Dogs.txt", NewFileContentsArray);
+
+                        //Update List
+                        DogFileInformationLine = File.ReadAllLines(@"C:\Users\DSU\Desktop\ShelterData\Dogs.txt");
+                    }
+                    #endregion
+
+                    #region DeleteCat
+                    if (CurrentAnimal == "Cat")
+                    {
+                        for (int i = 0; i < CatFileInformationLine.Length; i++)
+                        {
+                            //Grab everything that isnt the line we want to remove
+                            string[] CatFileWords = CatFileInformationLine[i].Split(' ');
+                            if (CatFileWords[0] != NameOfSelectedAnimal)
+                            {
+                                NewFileContentsList.Add(CatFileInformationLine[i]);
+
+                            }
+
+                        }
+                        NewFileContentsArray = NewFileContentsList.ToArray();
+
+                        ////Save NewFile Contents to the file
+                        Cat DeleteCat = new Cat();
+                        DeleteCat.DeleteAnimalInformation(@"C:\Users\DSU\Desktop\ShelterData\Cats.txt", NewFileContentsArray);
+
+                        //Update List
+                        CatFileInformationLine = File.ReadAllLines(@"C:\Users\DSU\Desktop\ShelterData\Cats.txt");
+                    }
+                    #endregion
+
+                    #region DeleteRodent
+                    if (CurrentAnimal == "Rodent")
+                    {
+                        for (int i = 0; i < RodentsFileInformationLine.Length; i++)
+                        {
+                            //Grab everything that isnt the line we want to remove
+                            string[] RodentFileWords = RodentsFileInformationLine[i].Split(' ');
+                            if (RodentFileWords[0] != NameOfSelectedAnimal)
+                            {
+                                NewFileContentsList.Add(RodentsFileInformationLine[i]);
+                            }
+                        }
+                        NewFileContentsArray = NewFileContentsList.ToArray();
+
+                        ////Save NewFile Contents to the file
+                        Rodent DeleteRodent = new Rodent();
+                        DeleteRodent.DeleteAnimalInformation(@"C:\Users\DSU\Desktop\ShelterData\Rodents.txt", NewFileContentsArray);
+
+                        //Update List
+                        RodentsFileInformationLine = File.ReadAllLines(@"C:\Users\DSU\Desktop\ShelterData\Rodents.txt");
+                    }
+                    #endregion
+
+                    #region Reptile
+                    if (CurrentAnimal == "Reptile")
+                    {
+                        for (int i = 0; i < ReptilesFileInformationLine.Length; i++)
+                        {
+                            //Grab everything that isnt the line we want to remove
+                            string[] ReptileFileWords = ReptilesFileInformationLine[i].Split(' ');
+                            if (ReptileFileWords[0] != NameOfSelectedAnimal)
+                            {
+                                NewFileContentsList.Add(ReptilesFileInformationLine[i]);
+                            }
+                        }
+                        NewFileContentsArray = NewFileContentsList.ToArray();
+
+                        ////Save NewFile Contents to the file
+                        Reptile DeleteReptile = new Reptile();
+                        DeleteReptile.DeleteAnimalInformation(@"C:\Users\DSU\Desktop\ShelterData\Reptiles.txt", NewFileContentsArray);
+
+                        //Update List
+                        ReptilesFileInformationLine = File.ReadAllLines(@"C:\Users\DSU\Desktop\ShelterData\Reptiles.txt");
+                    }
+                    #endregion
+
+                    #region Other
+                    if (CurrentAnimal == "Other")
+                    {
+                        for (int i = 0; i < OtherAnimalsFileInformationLine.Length; i++)
+                        {
+                            //Grab everything that isnt the line we want to remove
+                            string[] OtherFileWords = OtherAnimalsFileInformationLine[i].Split(' ');
+                            if (OtherFileWords[0] != NameOfSelectedAnimal)
+                            {
+                                NewFileContentsList.Add(OtherAnimalsFileInformationLine[i]);
+                            }
+                        }
+                        NewFileContentsArray = NewFileContentsList.ToArray();
+
+                        ////Save NewFile Contents to the file
+                        OtherAnimal DeleteOther = new OtherAnimal();
+                        DeleteOther.DeleteAnimalInformation(@"C:\Users\DSU\Desktop\ShelterData\Other.txt", NewFileContentsArray);
+
+                        //Update List
+                        OtherAnimalsFileInformationLine = File.ReadAllLines(@"C:\Users\DSU\Desktop\ShelterData\Other.txt");
+                    }
+                    #endregion
+                }
             }
-            if (CurrentAnimal == "Reptile")
+            catch 
             {
-                Reptile AddReptile = new Reptile();
-                AddReptile.SaveAnimalToFile(@"C:\Users\DSU\Desktop\ShelterData\Reptiles.txt", NewAnimal);
-                ReptilesFileInformationLine = File.ReadAllLines(@"C:\Users\DSU\Desktop\ShelterData\Reptiles.txt");
+                MessageBox.Show("Delete Error, please try again");
             }
-            if (CurrentAnimal == "Other")
-            {
-                OtherAnimal AddOther = new OtherAnimal();
-                AddOther.SaveAnimalToFile(@"C:\Users\DSU\Desktop\ShelterData\Other.txt", NewAnimal);
-                OtherAnimalsFileInformationLine = File.ReadAllLines(@"C:\Users\DSU\Desktop\ShelterData\Other.txt");
-            }
+
         }
         #endregion
 
-        private void DeleteButton_Click(object sender, EventArgs e)
-        {
-            //Grabs everything that isnt the deleted line and rewrites it.
-            string NameOfSelectedAnimal = (CurrentAnimalsList.SelectedItem ?? "(none)").ToString();
-            string[] NewFileContentsArray;
-            var NewFileContentsList = new List<string>();
-
-            if (CurrentAnimal == "Dog")
-            {
-                for (int i = 0; i < DogFileInformationLine.Length; i++)
-                {
-                    //Grab everything that isnt the line we want to remove
-                    string[] DogFileWords = DogFileInformationLine[i].Split(' ');
-                    if (DogFileWords[0] != NameOfSelectedAnimal)
-                    {
-                        NewFileContentsList.Add(DogFileInformationLine[i]);
-
-                    }
-                                    
-                }
-                NewFileContentsArray = NewFileContentsList.ToArray();
-
-                ////Save NewFile Contents to the file
-                Dog DeleteDog = new Dog();
-                DeleteDog.DeleteAnimalInformation(@"C:\Users\DSU\Desktop\ShelterData\Dogs.txt",NewFileContentsArray);
-
-                //Update List
-                DogFileInformationLine = File.ReadAllLines(@"C:\Users\DSU\Desktop\ShelterData\Dogs.txt");
-            }
-            if(CurrentAnimal == "Cat")
-            {
-                for (int i = 0; i < CatFileInformationLine.Length; i++)
-                {
-                    //Grab everything that isnt the line we want to remove
-                    string[] CatFileWords = CatFileInformationLine[i].Split(' ');
-                    if (CatFileWords[0] != NameOfSelectedAnimal)
-                    {
-                        NewFileContentsList.Add(CatFileInformationLine[i]);
-
-                    }
-
-                }
-                NewFileContentsArray = NewFileContentsList.ToArray();
-
-                ////Save NewFile Contents to the file
-                Cat DeleteCat = new Cat();
-                DeleteCat.DeleteAnimalInformation(@"C:\Users\DSU\Desktop\ShelterData\Cats.txt", NewFileContentsArray);
-
-                //Update List
-                CatFileInformationLine = File.ReadAllLines(@"C:\Users\DSU\Desktop\ShelterData\Cats.txt");
-            }
-            if(CurrentAnimal == "Rodent")
-            {
-                for (int i = 0; i < RodentsFileInformationLine.Length; i++)
-                {
-                    //Grab everything that isnt the line we want to remove
-                    string[] RodentFileWords = RodentsFileInformationLine[i].Split(' ');
-                    if (RodentFileWords[0] != NameOfSelectedAnimal)
-                    {
-                        NewFileContentsList.Add(RodentsFileInformationLine[i]);
-                    }
-                }
-                NewFileContentsArray = NewFileContentsList.ToArray();
-
-                ////Save NewFile Contents to the file
-                Rodent DeleteRodent = new Rodent();
-                DeleteRodent.DeleteAnimalInformation(@"C:\Users\DSU\Desktop\ShelterData\Rodents.txt", NewFileContentsArray);
-
-                //Update List
-                RodentsFileInformationLine = File.ReadAllLines(@"C:\Users\DSU\Desktop\ShelterData\Rodents.txt");
-            }
-            if(CurrentAnimal == "Reptile")
-            {
-                for (int i = 0; i < ReptilesFileInformationLine.Length; i++)
-                {
-                    //Grab everything that isnt the line we want to remove
-                    string[] ReptileFileWords = ReptilesFileInformationLine[i].Split(' ');
-                    if (ReptileFileWords[0] != NameOfSelectedAnimal)
-                    {
-                        NewFileContentsList.Add(ReptilesFileInformationLine[i]);
-                    }
-                }
-                NewFileContentsArray = NewFileContentsList.ToArray();
-
-                ////Save NewFile Contents to the file
-                Reptile DeleteReptile = new Reptile();
-                DeleteReptile.DeleteAnimalInformation(@"C:\Users\DSU\Desktop\ShelterData\Reptiles.txt", NewFileContentsArray);
-
-                //Update List
-                ReptilesFileInformationLine = File.ReadAllLines(@"C:\Users\DSU\Desktop\ShelterData\Reptiles.txt");
-            }
-            if(CurrentAnimal == "Other")
-            {
-                for (int i = 0; i < OtherAnimalsFileInformationLine.Length; i++)
-                {
-                    //Grab everything that isnt the line we want to remove
-                    string[] OtherFileWords = OtherAnimalsFileInformationLine[i].Split(' ');
-                    if (OtherFileWords[0] != NameOfSelectedAnimal)
-                    {
-                        NewFileContentsList.Add(OtherAnimalsFileInformationLine[i]);
-                    }
-                }
-                NewFileContentsArray = NewFileContentsList.ToArray();
-
-                ////Save NewFile Contents to the file
-                OtherAnimal DeleteOther = new OtherAnimal();
-                DeleteOther.DeleteAnimalInformation(@"C:\Users\DSU\Desktop\ShelterData\Other.txt", NewFileContentsArray);
-
-                //Update List
-                OtherAnimalsFileInformationLine = File.ReadAllLines(@"C:\Users\DSU\Desktop\ShelterData\Other.txt");
-            }
-        }
-      
         #region Other
         private void Form1_Load(object sender, EventArgs e)
         {

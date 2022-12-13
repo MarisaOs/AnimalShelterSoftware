@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace AnimalShelterSoftware
 {
@@ -28,12 +29,14 @@ namespace AnimalShelterSoftware
         #endregion
 
         //Animal List for events
+        #region EventList
         private List<string> _AnimalFileList;
         public List<string> AnimalFileList
         {
             get { return _AnimalFileList; }
             set { _AnimalFileList = value; }
         }
+        #endregion
         //Properties
         #region Name
         private string _Name;
@@ -189,71 +192,108 @@ namespace AnimalShelterSoftware
         #region FileSaves
         public void SaveAnimalToFile(string AnimalFilePath, string[] NewAnimalInfo)
         {
-            //Using the encapsulation of the private varaibles to organize the fields to store in the file.
-            _Name = NewAnimalInfo[0];
-            _Breed = NewAnimalInfo[1];
-            _Age = NewAnimalInfo[2];
-            _Appearance = NewAnimalInfo[3];
-            _EnteredShelterDate = NewAnimalInfo[4];
-            _AdoptionDate = NewAnimalInfo[5];
-            _Gender = NewAnimalInfo[6];
-            _ExtraInformation = NewAnimalInfo[7];
+            try
+            {
+                //Using the encapsulation of the private varaibles to organize the fields to store in the file.
+                _Name = NewAnimalInfo[0];
+                _Breed = NewAnimalInfo[1];
+                _Age = NewAnimalInfo[2];
+                _Appearance = NewAnimalInfo[3];
+                _EnteredShelterDate = NewAnimalInfo[4];
+                _AdoptionDate = NewAnimalInfo[5];
+                _Gender = NewAnimalInfo[6];
+                _ExtraInformation = NewAnimalInfo[7];
 
 
-            string AnimalInfoFormated = Name + " " + Breed + " " + Age + " " + Appearance + " " + EnteredShelterDate + " " + AdoptionDate + " " + Gender + " ~" + ExtraInformation;
-            File.AppendAllText(AnimalFilePath, Environment.NewLine + AnimalInfoFormated);
+                string AnimalInfoFormated = Name + " " + Breed + " " + Age + " " + Appearance + " " + EnteredShelterDate + " " + AdoptionDate + " " + Gender + " ~" + ExtraInformation;
+                File.AppendAllText(AnimalFilePath, Environment.NewLine + AnimalInfoFormated);
+            }
+            catch (Exception e)
+            {
+                AnimalFileList.Add(e.ToString());
+                MessageBox.Show("There was a problem with saving the information, please double check before you save");
+            }
+          
         }
 
         public void SaveFirstAnimalToFile(string AnimalFilePath, string[] NewAnimalInfo)
         {
-            //Using the encapsulation of the private varaibles to organize the fields to store in the file.
-            _Name = NewAnimalInfo[0];
-            _Breed = NewAnimalInfo[1];
-            _Age = NewAnimalInfo[2];
-            _Appearance = NewAnimalInfo[3];
-            _EnteredShelterDate = NewAnimalInfo[4];
-            _AdoptionDate = NewAnimalInfo[5];
-            _Gender = NewAnimalInfo[6];
-            _ExtraInformation = NewAnimalInfo[7];
+            try
+            {
+                //Using the encapsulation of the private varaibles to organize the fields to store in the file.
+                _Name = NewAnimalInfo[0];
+                _Breed = NewAnimalInfo[1];
+                _Age = NewAnimalInfo[2];
+                _Appearance = NewAnimalInfo[3];
+                _EnteredShelterDate = NewAnimalInfo[4];
+                _AdoptionDate = NewAnimalInfo[5];
+                _Gender = NewAnimalInfo[6];
+                _ExtraInformation = NewAnimalInfo[7];
 
 
-            string AnimalInfoFormated = Name + " " + Breed + " " + Age + " " + Appearance + " " + EnteredShelterDate + " " + AdoptionDate + " " + Gender + " ~" + ExtraInformation;
-            File.AppendAllText(AnimalFilePath, AnimalInfoFormated);
+                string AnimalInfoFormated = Name + " " + Breed + " " + Age + " " + Appearance + " " + EnteredShelterDate + " " + AdoptionDate + " " + Gender + " ~" + ExtraInformation;
+                File.AppendAllText(AnimalFilePath, AnimalInfoFormated);
+            }
+            catch (Exception e)
+            {
+                AnimalFileList.Add(e.ToString());
+                MessageBox.Show("There was a problem with saving the information, please double check before you save");
+            }
+          
+           
         }
         #endregion
         //Had to remove the ~Identifier in fron of the Extra Information
         #region DeleteFileSaves
         public void DeletesSaveAnimalToFile(string AnimalFilePath, string[] NewAnimalInfo)
         {
-            //Using the encapsulation of the private varaibles to organize the fields to store in the file.
-            _Name = NewAnimalInfo[0];
-            _Breed = NewAnimalInfo[1];
-            _Age = NewAnimalInfo[2];
-            _Appearance = NewAnimalInfo[3];
-            _EnteredShelterDate = NewAnimalInfo[4];
-            _AdoptionDate = NewAnimalInfo[5];
-            _Gender = NewAnimalInfo[6];
-            _ExtraInformation = NewAnimalInfo[7];
+            try
+            {
+                //Using the encapsulation of the private varaibles to organize the fields to store in the file.
+                _Name = NewAnimalInfo[0];
+                _Breed = NewAnimalInfo[1];
+                _Age = NewAnimalInfo[2];
+                _Appearance = NewAnimalInfo[3];
+                _EnteredShelterDate = NewAnimalInfo[4];
+                _AdoptionDate = NewAnimalInfo[5];
+                _Gender = NewAnimalInfo[6];
+                _ExtraInformation = NewAnimalInfo[7];
 
 
-            string AnimalInfoFormated = Name + " " + Breed + " " + Age + " " + Appearance + " " + EnteredShelterDate + " " + AdoptionDate + " " + Gender + " " + ExtraInformation;
-            File.AppendAllText(AnimalFilePath, Environment.NewLine + AnimalInfoFormated);
+                string AnimalInfoFormated = Name + " " + Breed + " " + Age + " " + Appearance + " " + EnteredShelterDate + " " + AdoptionDate + " " + Gender + " " + ExtraInformation;
+                File.AppendAllText(AnimalFilePath, Environment.NewLine + AnimalInfoFormated);
+            }
+             catch (Exception e)
+            {
+                AnimalFileList.Add(e.ToString());
+                MessageBox.Show("There was a problem with deleting the information, please try again");
+            }
+          
         }
         public void DeletesSaveFirstAnimalToFile(string AnimalFilePath, string[] NewAnimalInfo)
         {
-            //Using the encapsulation of the private varaibles to organize the fields to store in the file.
-            _Name = NewAnimalInfo[0];
-            _Breed = NewAnimalInfo[1];
-            _Age = NewAnimalInfo[2];
-            _Appearance = NewAnimalInfo[3];
-            _EnteredShelterDate = NewAnimalInfo[4];
-            _AdoptionDate = NewAnimalInfo[5];
-            _Gender = NewAnimalInfo[6];
-            _ExtraInformation = NewAnimalInfo[7];
+            try
+            {
+                //Using the encapsulation of the private varaibles to organize the fields to store in the file.
+                _Name = NewAnimalInfo[0];
+                _Breed = NewAnimalInfo[1];
+                _Age = NewAnimalInfo[2];
+                _Appearance = NewAnimalInfo[3];
+                _EnteredShelterDate = NewAnimalInfo[4];
+                _AdoptionDate = NewAnimalInfo[5];
+                _Gender = NewAnimalInfo[6];
+                _ExtraInformation = NewAnimalInfo[7];
 
 
-            string AnimalInfoFormated = Name + " " + Breed + " " + Age + " " + Appearance + " " + EnteredShelterDate + " " + AdoptionDate + " " + Gender + " " + ExtraInformation;
-            File.AppendAllText(AnimalFilePath, AnimalInfoFormated);
+                string AnimalInfoFormated = Name + " " + Breed + " " + Age + " " + Appearance + " " + EnteredShelterDate + " " + AdoptionDate + " " + Gender + " " + ExtraInformation;
+                File.AppendAllText(AnimalFilePath, AnimalInfoFormated);
+            }
+            catch (Exception e)
+            {
+                AnimalFileList.Add(e.ToString());
+                MessageBox.Show("There was a problem with deleting the information, please try again");
+            }
+           
         }
         #endregion
 
@@ -261,28 +301,37 @@ namespace AnimalShelterSoftware
         #region Delete
         public void DeleteAnimalInformation(string AnimalFilePath, string[] SelectedAnimalInfo)
         {
-            string[] FirstAnimalFileLine=  SelectedAnimalInfo[0].Split(' '); ;
-            //Remove file existing content
-            File.WriteAllText(AnimalFilePath, "");
-
-            //Save NewFile Contents to the file
-
-            //To Prevent NewLine at beginning of file
-            FirstAnimalFileLine[7] = SelectedAnimalInfo[0].Substring(SelectedAnimalInfo[0].IndexOf('~'));
-            DeletesSaveFirstAnimalToFile(AnimalFilePath, FirstAnimalFileLine);
-            //The rest of the array contents
-            for (int i = 1; i < SelectedAnimalInfo.Length; i++)
+            try
             {
-                string[] NewAnimalFileWords = SelectedAnimalInfo[i].Split(' ');
-                NewAnimalFileWords[7] = SelectedAnimalInfo[i].Substring(SelectedAnimalInfo[i].IndexOf('~'));
+                string[] FirstAnimalFileLine = SelectedAnimalInfo[0].Split(' '); ;
+                //Remove file existing content
+                File.WriteAllText(AnimalFilePath, "");
 
-                DeletesSaveAnimalToFile(AnimalFilePath, NewAnimalFileWords);
+                //Save NewFile Contents to the file
+
+                //To Prevent NewLine at beginning of file
+                FirstAnimalFileLine[7] = SelectedAnimalInfo[0].Substring(SelectedAnimalInfo[0].IndexOf('~'));
+                DeletesSaveFirstAnimalToFile(AnimalFilePath, FirstAnimalFileLine);
+                //The rest of the array contents
+                for (int i = 1; i < SelectedAnimalInfo.Length; i++)
+                {
+                    string[] NewAnimalFileWords = SelectedAnimalInfo[i].Split(' ');
+                    NewAnimalFileWords[7] = SelectedAnimalInfo[i].Substring(SelectedAnimalInfo[i].IndexOf('~'));
+
+                    DeletesSaveAnimalToFile(AnimalFilePath, NewAnimalFileWords);
+                }
             }
+            catch (Exception e)
+            {
+                AnimalFileList.Add(e.ToString());
+                MessageBox.Show("There was a problem with deleting the information, please try again");
+            }
+            
         }
         #endregion
         //Polymorphism for Reptiles and Other to check if animal is poisonous
-        #region PolyFunction
-        public Boolean WarnIfPoisonous(string SpeciesName, string AnimalsName)
+        #region VirtualPolyFunction
+        public virtual Boolean WarnIfPoisonous(string SpeciesName)
         {
             string[] LegalPoisonousAnimals = { "DartFrog", "PurpleTreeTarantula", "BlueRingOctopus", "Platypus", "Pufferfish" };
             Boolean isPoisonous = false;

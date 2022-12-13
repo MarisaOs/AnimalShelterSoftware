@@ -8,10 +8,9 @@ namespace AnimalShelterSoftware
 {
     public class Reptile : Animal
     {
+        #region Properties
         private Boolean _isPoisonous = false;
         private Boolean _isVenomous = false;
-      
-
         private string[] LegalVenomousAnimals = {"HogNoseSnake","StingRay","Scorpion","GilaMonster" };
         private string[] LegalPoisonousAnimals = {"DartFrog","PurpleTreeTarantula","BlueRingOctopus","Platypus"};
 
@@ -31,9 +30,12 @@ namespace AnimalShelterSoftware
             }
         }
         #endregion
+
+        #endregion
+
         //Compare them to a list of common venom/poison pets and flag if it matches
 
-        //Venomus Grumpy the Hognose
+        //Venomous 
         #region isVenomousCheck
         public Boolean WarnIfVenomous(string SpeciesName)
         {
@@ -51,10 +53,11 @@ namespace AnimalShelterSoftware
         }
         #endregion
 
+        //Poisonous
         #region IsPoisonousCheck
 
         //Polymorphism
-        public Boolean WarnIfPoisonous(string SpeciesName)
+        public override Boolean WarnIfPoisonous(string SpeciesName)
         {
             Boolean isPoisonous = _isPoisonous;
 
